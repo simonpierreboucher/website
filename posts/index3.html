@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Simon-Pierre Boucher">
 <meta name="description" content="Andreas Handel’s personal website.">
 
-<title>Simon-Pierre Boucher -</title>
+<title>Simon-Pierre Boucher - Simple Linear Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,29 +25,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//files/icon.png" rel="icon" type="image/png">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//files/icon.png" rel="icon" type="image/png">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,24 +85,28 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="customstyle.css">
-<meta name="twitter:title" content="Simon-Pierre Boucher -">
+<link rel="stylesheet" href="../customstyle.css">
+<meta name="twitter:title" content="Simon-Pierre Boucher - Simple Linear Model">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.spboucher.net/posts/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta name="twitter:creator" content="@spbou4">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./files/logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../files/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Simon-Pierre Boucher</span>
     </a>
   </div>
@@ -112,19 +117,19 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html" rel="" target="">
+    <a class="nav-link" href="../teaching.html" rel="" target="">
  <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research.html" rel="" target="">
+    <a class="nav-link" href="../research.html" rel="" target="">
  <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html" rel="" target="">
+    <a class="nav-link" href="../posts.html" rel="" target="">
  <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
@@ -136,102 +141,106 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Simple Linear Model</h1>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Simon-Pierre Boucher <a href="https://orcid.org/0000-0002-3756-3937" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Université Laval
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#education" id="toc-education" class="nav-link active" data-scroll-target="#education">EDUCATION</a></li>
-  <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience">EXPERIENCE</a></li>
-  <li><a href="#research-projects" id="toc-research-projects" class="nav-link" data-scroll-target="#research-projects">RESEARCH PROJECTS</a></li>
-  <li><a href="#technical-strengths" id="toc-technical-strengths" class="nav-link" data-scroll-target="#technical-strengths">TECHNICAL STRENGTHS</a></li>
+  <li><a href="#simple-linear-model" id="toc-simple-linear-model" class="nav-link active" data-scroll-target="#simple-linear-model">Simple Linear Model</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<section id="education" class="level3">
-<h3 class="anchored" data-anchor-id="education">EDUCATION</h3>
-<section id="doctorate-in-administrative-sciences---finance-and-insurance-ph.d." class="level4">
-<h4 class="anchored" data-anchor-id="doctorate-in-administrative-sciences---finance-and-insurance-ph.d.">Doctorate in Administrative Sciences - Finance and Insurance (Ph.D.)</h4>
+
+<section id="simple-linear-model" class="level1">
+<h1>Simple Linear Model</h1>
+<p>The intuition behind a simple linear regression model is simply to relate two variables having a theoretical economic relationship. The model will allow us to check whether this relation is also reflected empirically. Whether in economics or finance, there are several asset pricing models with a strong theoretical foundation that are not reflected empirically. The best example is the Capital Asset Pricing Model (CAPM), linking the risk premium of the market portfolio with the risk premium of an individual security. The theoretical model can therefore be represented as follows:</p>
+<p><span class="math display">\[E(R_i)=R_f+\beta_{i,m} [E(R_m)-R_f]\]</span></p>
+<p>Where :</p>
 <ul>
-<li>Laval University, Quebec</li>
-<li>2019-present</li>
+<li><span class="math inline">\(\beta_{i,m}\)</span> represents a measure of the systematic risk of the asset</li>
+<li><span class="math inline">\(E(R_m)\)</span> represents the expected profitability on the market</li>
+<li><span class="math inline">\(R_f\)</span> represents the risk free interest rate</li>
+<li><span class="math inline">\(E(R_i)\)</span> represents the expected profitability on asset <span class="math inline">\(i\)</span></li>
 </ul>
-</section>
-<section id="master-of-science-in-administration---finance-m.-sc" class="level4">
-<h4 class="anchored" data-anchor-id="master-of-science-in-administration---finance-m.-sc">Master of Science in Administration - Finance (M. Sc)</h4>
+<p>Since we are going to want to estimate this model empirically, we will use the realized values for the return on asset i, the market and the risk-free rate. The empirical format of the CAPM can therefore be represented as follows:</p>
+<p><span class="math display">\[(R_i-R_f)=\alpha+\beta(R_m-R_f)+\epsilon\]</span></p>
+<p>Where :</p>
 <ul>
-<li>Laval University, Quebec</li>
-<li>2017-2018</li>
+<li><span class="math inline">\((R_i-R_f)\)</span> represents the dependent variable (we seek to explain the variation of this variable)</li>
+<li><span class="math inline">\((R_m-R_f)\)</span> represents the independent variable(we will use this variable to explain the independent variable)</li>
+<li><span class="math inline">\(\alpha\)</span> is the coefficient estimating the proportion of the excess return on the asset <span class="math inline">\(i\)</span> which is unexplained by the systematic risk</li>
+<li><span class="math inline">\(\beta\)</span> is the coefficient estimating the proportion of the excess return on the asset <span class="math inline">\(i\)</span> which is explained by the systematic risk</li>
+<li><span class="math inline">\(\epsilon\)</span> represents the error in our model, that is, the variations in return related to idiosyncratic risk.</li>
 </ul>
-</section>
-<section id="bachelor-of-business-administration---finance-b.a.a." class="level4">
-<h4 class="anchored" data-anchor-id="bachelor-of-business-administration---finance-b.a.a.">Bachelor of Business Administration - Finance (B.A.A.)</h4>
+<p>This is a specific example of a simple linear regression model and this specification is by no means exhaustive. To have a uniform notation, the simple linear regression model will be represented as follows:</p>
+<p><span class="math display">\[y_i=\beta_0+\beta_1x_i+e_i\]</span></p>
+<p>Where :</p>
 <ul>
-<li>Laval University, Quebec</li>
-<li>2013-2017</li>
+<li><span class="math inline">\(y_i\)</span> represents the dependent variable for the observation <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(x_i\)</span> represents the independent variable for the observation <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(\beta_0\)</span> represents the intercept estimator of our model</li>
+<li><span class="math inline">\(\beta_1\)</span> represents the slope estimator of our model</li>
+<li><span class="math inline">\(\epsilon_i\)</span> represents the error made by the model</li>
 </ul>
-</section>
-</section>
-<section id="experience" class="level3">
-<h3 class="anchored" data-anchor-id="experience">EXPERIENCE</h3>
-<section id="laval-university" class="level4">
-<h4 class="anchored" data-anchor-id="laval-university">Laval University</h4>
-<section id="teaching" class="level5">
-<h5 class="anchored" data-anchor-id="teaching">Teaching</h5>
-<ul>
-<li>GSF-3100 Capital market (Fall/Winter 2021, Fall 2022 and Winter 2023)</li>
-<li>GSF-6053 Financial Econometrics (Winter 2022)</li>
-<li>GSF-1500 Financial Management (Summer 2022)</li>
-</ul>
-</section>
-<section id="graduate-teaching-assistant" class="level5">
-<h5 class="anchored" data-anchor-id="graduate-teaching-assistant">Graduate Teaching Assistant</h5>
-<ul>
-<li>GSF-2101 Portfolio Management</li>
-<li>GSF-6025 Financial Strategies and Policies I</li>
-<li>GSF-6008 Corporate finance</li>
-<li>GSF-2102 Corporate finance</li>
-<li>GSF-6028 Financial Theory</li>
-</ul>
-</section>
-<section id="graduate-research-assistant" class="level5">
-<h5 class="anchored" data-anchor-id="graduate-research-assistant">Graduate Research Assistant</h5>
-<ul>
-<li>2017 - 2021</li>
-<li>Real estate database creation</li>
-<li>Hedonic modeling</li>
-<li>Literature review on financial problematics</li>
-<li>Program econometric regression models on R, SAS, MATLAB.</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="research-projects" class="level3">
-<h3 class="anchored" data-anchor-id="research-projects">RESEARCH PROJECTS</h3>
-<ul>
-<li>Has financialization changed the impact of macro announcements ?</li>
-<li>Do macro announcement surprises cause changes in liquidity, volatility or arbitrage opportunity in the Exchanged Traded Fund market?</li>
-</ul>
-</section>
-<section id="technical-strengths" class="level3">
-<h3 class="anchored" data-anchor-id="technical-strengths">TECHNICAL STRENGTHS</h3>
-<ul>
-<li><strong>Computer Languages:</strong> SAS, R, MatLab, STATA, Python, SQL, Latex</li>
-<li><strong>Databases:</strong> COMPUSTAT, CRSP, Bloomberg, Morningstar, Thomson Reuters</li>
-</ul>
+<p>The error term <span class="math inline">\(\epsilon_i\)</span> represents the difference between the actual value of our dependent variable and its estimated value. If our model is correctly specified then the error term should not contain any structure linking it to our dependent variable. In other words, the error term <span class="math inline">\(\epsilon_i\)</span> must be independent and identically distributed random variable with mean zero and constant variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p><span class="math display">\[\epsilon \sim iid(0,\sigma^2)\]</span></p>
+<p>Since the error term is a random variable then, the dependent variable is also a random variable with the following expectation:</p>
+<p><span class="math display">\[E(y_i)=E[\beta_0+\beta_1x_i+\epsilon_i]   =E(\beta_0+\beta_1x_i)+E(\epsilon_i)  =\beta_0+\beta_1x_i\]</span></p>
+<p>As for the variance of our dependent variable, we find it as follows:</p>
+<p><span class="math display">\[Var(y_i)=Var[\beta_0+\beta_1x_i+\epsilon_i]   =Var(\beta_0+\beta_1x_i)+Var(\epsilon_i)  =Var(\epsilon_i)  =\sigma^2\]</span></p>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{boucher,
+  author = {Boucher, Simon-Pierre},
+  title = {Simple {Linear} {Model}},
+  url = {https://www.spboucher.net/posts/index3.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-boucher" class="csl-entry quarto-appendix-citeas" role="listitem">
+Boucher, Simon-Pierre. n.d. <span>“Simple Linear Model.”</span> <a href="https://www.spboucher.net/posts/index3.html">https://www.spboucher.net/posts/index3.html</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -580,12 +589,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://utteranc.es/client.js" repo="simonpierreboucher/website" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Simon-Pierre Boucher, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
     <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="./posts/quarto-website-migration.html">these folks.</a><br> <a href="https://github.com/simonpierreboucher">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="../posts/quarto-website-migration.html">these folks.</a><br> <a href="https://github.com/simonpierreboucher">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>
 
