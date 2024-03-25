@@ -7,10 +7,15 @@
     "listing": "/posts.html",
     "items": [
       "/posts/index.html",
+      "/posts/index10.html",
       "/posts/index2.html",
       "/posts/index3.html",
       "/posts/index4.html",
-      "/posts/index5.html"
+      "/posts/index5.html",
+      "/posts/index6.html",
+      "/posts/index7.html",
+      "/posts/index8.html",
+      "/posts/index9.html"
     ]
   },
   {

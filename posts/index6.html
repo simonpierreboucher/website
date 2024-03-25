@@ -9,7 +9,7 @@
 <meta name="author" content="Simon-Pierre Boucher">
 <meta name="description" content="Andreas Handel’s personal website.">
 
-<title>Simon-Pierre Boucher - Simple Linear Model</title>
+<title>Simon-Pierre Boucher - Goodness of fit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,7 +89,7 @@ cookieconsent.run({
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../customstyle.css">
-<meta name="twitter:title" content="Simon-Pierre Boucher - Simple Linear Model">
+<meta name="twitter:title" content="Simon-Pierre Boucher - Goodness of fit">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.spboucher.net/posts/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta name="twitter:creator" content="@spbou4">
@@ -144,10 +144,10 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Simple Linear Model</h1>
+      <h1 class="title">Goodness of fit</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Simple Linear Model</div>
-                <div class="quarto-category">Regression</div>
+                <div class="quarto-category">Goodness of fit</div>
+                <div class="quarto-category">R-SQUARED</div>
                 <div class="quarto-category">Econometrics</div>
               </div>
                   </div>
@@ -178,7 +178,13 @@ cookieconsent.run({
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -190,52 +196,32 @@ cookieconsent.run({
 
 
 
-<p>The intuition behind a simple linear regression model is simply to relate two variables having a theoretical economic relationship. The model will allow us to check whether this relation is also reflected empirically. Whether in economics or finance, there are several asset pricing models with a strong theoretical foundation that are not reflected empirically. The best example is the Capital Asset Pricing Model (CAPM), linking the risk premium of the market portfolio with the risk premium of an individual security. The theoretical model can therefore be represented as follows:</p>
-<p><span class="math display">\[E(R_i)=R_f+\beta_{i,m} [E(R_m)-R_f]\]</span></p>
-<p>Where :</p>
-<ul>
-<li><span class="math inline">\(\beta_{i,m}\)</span> represents a measure of the systematic risk of the asset</li>
-<li><span class="math inline">\(E(R_m)\)</span> represents the expected profitability on the market</li>
-<li><span class="math inline">\(R_f\)</span> represents the risk free interest rate</li>
-<li><span class="math inline">\(E(R_i)\)</span> represents the expected profitability on asset <span class="math inline">\(i\)</span></li>
-</ul>
-<p>Since we are going to want to estimate this model empirically, we will use the realized values for the return on asset i, the market and the risk-free rate. The empirical format of the CAPM can therefore be represented as follows:</p>
-<p><span class="math display">\[(R_i-R_f)=\alpha+\beta(R_m-R_f)+\epsilon\]</span></p>
-<p>Where :</p>
-<ul>
-<li><span class="math inline">\((R_i-R_f)\)</span> represents the dependent variable (we seek to explain the variation of this variable)</li>
-<li><span class="math inline">\((R_m-R_f)\)</span> represents the independent variable(we will use this variable to explain the independent variable)</li>
-<li><span class="math inline">\(\alpha\)</span> is the coefficient estimating the proportion of the excess return on the asset <span class="math inline">\(i\)</span> which is unexplained by the systematic risk</li>
-<li><span class="math inline">\(\beta\)</span> is the coefficient estimating the proportion of the excess return on the asset <span class="math inline">\(i\)</span> which is explained by the systematic risk</li>
-<li><span class="math inline">\(\epsilon\)</span> represents the error in our model, that is, the variations in return related to idiosyncratic risk.</li>
-</ul>
-<p>This is a specific example of a simple linear regression model and this specification is by no means exhaustive. To have a uniform notation, the simple linear regression model will be represented as follows:</p>
-<p><span class="math display">\[y_i=\beta_0+\beta_1x_i+e_i\]</span></p>
-<p>Where :</p>
-<ul>
-<li><span class="math inline">\(y_i\)</span> represents the dependent variable for the observation <span class="math inline">\(i\)</span></li>
-<li><span class="math inline">\(x_i\)</span> represents the independent variable for the observation <span class="math inline">\(i\)</span></li>
-<li><span class="math inline">\(\beta_0\)</span> represents the intercept estimator of our model</li>
-<li><span class="math inline">\(\beta_1\)</span> represents the slope estimator of our model</li>
-<li><span class="math inline">\(\epsilon_i\)</span> represents the error made by the model</li>
-</ul>
-<p>The error term <span class="math inline">\(\epsilon_i\)</span> represents the difference between the actual value of our dependent variable and its estimated value. If our model is correctly specified then the error term should not contain any structure linking it to our dependent variable. In other words, the error term <span class="math inline">\(\epsilon_i\)</span> must be independent and identically distributed random variable with mean zero and constant variance <span class="math inline">\(\sigma^2\)</span>.</p>
-<p><span class="math display">\[\epsilon \sim iid(0,\sigma^2)\]</span></p>
-<p>Since the error term is a random variable then, the dependent variable is also a random variable with the following expectation:</p>
-<p><span class="math display">\[E(y_i)=E[\beta_0+\beta_1x_i+\epsilon_i]   =E(\beta_0+\beta_1x_i)+E(\epsilon_i)  =\beta_0+\beta_1x_i\]</span></p>
-<p>As for the variance of our dependent variable, we find it as follows:</p>
-<p><span class="math display">\[Var(y_i)=Var[\beta_0+\beta_1x_i+\epsilon_i]   =Var(\beta_0+\beta_1x_i)+Var(\epsilon_i)  =Var(\epsilon_i)  =\sigma^2\]</span></p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p>In this chapter, we will present a measure allowing us to quantify the quality of our regression. We will start with the following three definitions:</p>
+<p><strong>Total Sum of Squares</strong></p>
+<p><span class="math display">\[SST=\sum_{i=1}^n(y_i-\overline{y})^2\]</span></p>
+<p><strong>Regression Sum of Squares</strong></p>
+<p><span class="math display">\[SSR=\sum_{i=1}^n(\hat{y}_i-\overline{y})^2\]</span></p>
+<p><strong>Error Sum of Squares</strong></p>
+<p><span class="math display">\[SSE=\sum_{i=1}^n(\hat{y}_i-y_i)^2\]</span></p>
+<p>The last three definitions can be related in the following equation</p>
+<p><span class="math display">\[\sum_{i=1}^n(y_i-\overline{y})^2=\sum_{i=1}^n(\hat{y}_i-\overline{y})^2+\sum_{i=1}^n(\hat{y}_i-y_i)^2\]</span>Or in an equivalent way</p>
+<p><span class="math display">\[SST=SSR+SSE\]</span></p>
+<p>One of the most used measures is the coefficient of determination, which can be found as follows</p>
+<p><span class="math display">\[R^2=\frac{SSR}{SST}=1-\frac{SSE}{SST}\]</span>Moreover, by construction, <span class="math inline">\(R^2\)</span> will take a value between 0 and 1.:<span class="math display">\[R^2 \in (0,1)\]</span></p>
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{boucher,
   author = {Boucher, Simon-Pierre},
-  title = {Simple {Linear} {Model}},
-  url = {https://www.spboucher.net/posts/index3.html},
+  title = {Goodness of Fit},
+  url = {https://www.spboucher.net/posts/index6.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-boucher" class="csl-entry quarto-appendix-citeas" role="listitem">
-Boucher, Simon-Pierre. n.d. <span>“Simple Linear Model.”</span> <a href="https://www.spboucher.net/posts/index3.html">https://www.spboucher.net/posts/index3.html</a>.
+Boucher, Simon-Pierre. n.d. <span>“Goodness of Fit.”</span> <a href="https://www.spboucher.net/posts/index6.html">https://www.spboucher.net/posts/index6.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
